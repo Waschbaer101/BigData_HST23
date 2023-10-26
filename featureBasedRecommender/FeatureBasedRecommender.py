@@ -270,7 +270,7 @@ def proportional_error_calc(y_pred, y_test):
     proportional_errors = []
     for pred, true in zip(y_pred, y_test):
         if true != 0:
-            error = ((pred - true) / true) * 100
+            error = (abs((pred - true) / true)) * 100
             proportional_errors.append(error)
     # Calculate the mean proportional error
     mean_proportional_error = np.mean(proportional_errors)
